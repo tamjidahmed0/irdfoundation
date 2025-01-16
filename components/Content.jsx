@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet"
 
 import MobileCategories from "./MobileCategories";
+import ContentSkeleton from "@/skeleton/contentSkeleton";
 
 
 const Content = () => {
@@ -72,10 +73,16 @@ const Content = () => {
     };
 
 
-
-
-
     const toggleSheet = () => setIsOpen(!isOpen);
+
+
+    if(duas.length === 0){
+        return <ContentSkeleton />
+    }
+
+    
+   
+
 
 
 
