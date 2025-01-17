@@ -1,7 +1,10 @@
 'use client';
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Repeat, Play, Pause } from 'lucide-react';
+
+
+
+
 
 const CustomAudioPlayer = ({ audioLink }) => {
   const audioRef = useRef(null);

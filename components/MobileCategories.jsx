@@ -1,4 +1,3 @@
-
 'use client'
 import { useState, useEffect } from "react"
 import Image from "next/image"
@@ -17,6 +16,12 @@ import { setDuas } from "@/features/duas";
 import { setSubCatId } from "@/features/subCat";
 import { setDuaId } from "@/features/duaId";
 
+
+
+
+
+
+
 const MobileCategories = () => {
   const dispatch = useDispatch();
   const [result, setResult] = useState([]);
@@ -25,8 +30,10 @@ const MobileCategories = () => {
   const search = useSearchParams().get('cat');
   const subcat = useSearchParams().get('subcat');
   const dua = useSearchParams().get('dua');
-
   const [subCatLoading, setSubCatLoading] = useState(true);
+
+
+
 
   useEffect(() => {
     const api = async () => {
@@ -41,6 +48,8 @@ const MobileCategories = () => {
     api();
   }, [search]);
 
+
+
   useEffect(() => {
     const api = async () => {
       setSubCatLoading(true);
@@ -48,7 +57,7 @@ const MobileCategories = () => {
         const subcat = await getSubCat({ categoryId: search });
         dispatch(setDuas(subcat));
         setSubCat(subcat);
-    
+
       } catch (error) {
         console.log(error);
       } finally {
@@ -58,6 +67,8 @@ const MobileCategories = () => {
 
     api();
   }, [search]);
+
+
 
   useEffect(() => {
     if (subcat) {

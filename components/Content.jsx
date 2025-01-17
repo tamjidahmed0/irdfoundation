@@ -52,7 +52,7 @@ const Content = () => {
 
 
     const handleCopy = (item) => {
-    
+
         const textToCopy = `
           Name: ${item.dua_name_en || 'N/A'}
           Top: ${item.top_en || 'N/A'}
@@ -76,12 +76,12 @@ const Content = () => {
     const toggleSheet = () => setIsOpen(!isOpen);
 
 
-    if(duas.length === 0){
+    if (duas.length === 0) {
         return <ContentSkeleton />
     }
 
-    
-   
+
+
 
 
 
@@ -90,11 +90,7 @@ const Content = () => {
         <div className=" flex flex-col gap-5 ">
             {/* navigation mobile*/}
             <div className="flex justify-end">
-
-
-
                 <div className="relative hidden md:flex">
-                    
                     <input
                         type="text"
                         placeholder="Search by Dua Name"
@@ -113,20 +109,14 @@ const Content = () => {
 
             </div>
             <div className=" overflow-y-auto xl:h-[722px] rounded-xl">
-
-
-
-
-
                 <div className="flex flex-col gap-5">
-
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                    
+
                         <SheetContent side='left'>
                             <SheetHeader>
                                 <SheetTitle ></SheetTitle>
                                 <SheetDescription>
-                                <MobileCategories />
+                                    <MobileCategories />
                                 </SheetDescription>
                             </SheetHeader>
                         </SheetContent>
@@ -136,8 +126,8 @@ const Content = () => {
                         <h2 className="text-[16px] text-[#393939] mx-4 flex items-center gap-4"><Menu size={25} onClick={toggleSheet} /> Dua's importance</h2>
                     </div>
 
-                    {duas[0]?.subCategories?.map((section, index) => (
 
+                    {duas[0]?.subCategories?.map((section, index) => (
                         <div className="space-y-4" key={index}>
                             {/* Title */}
                             <div className="bg-white h-[57px] rounded-xl flex items-center px-5 " id={section.subcat_id}>
@@ -162,15 +152,11 @@ const Content = () => {
                                             <p className="text-[16px] text-[#393939] leading-[24px]">{item.top_en}</p>
                                         )}
 
-
                                         {item.dua_arabic &&
                                             (
                                                 <p className="text-[24px] text-right leading-[71.33px] font-quran">{item.dua_arabic}</p>
                                             )
                                         }
-
-
-
 
 
                                         <div className="">
@@ -213,11 +199,7 @@ const Content = () => {
                     ))}
                 </div>
 
-
-
             </div>
-
-
 
         </div>
     )
